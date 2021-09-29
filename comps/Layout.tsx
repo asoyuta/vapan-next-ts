@@ -1,4 +1,4 @@
-import Header from './Header'
+import {Header, Footer} from './index'
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -9,6 +9,7 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="content">
       <Header />
       {children}
+      <Footer />
     </div>
   )
 }
