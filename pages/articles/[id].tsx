@@ -11,7 +11,7 @@ const Details = ({ article }: Props) => {
     const { personInfoList } = article
 
     for (let i = 0; i < personInfoList.length; i++) {
-      personInfoList[i].src = require(`../../public/img/livers/${personInfoList[i].name}.png`).default
+      personInfoList[i].src = require(`../../public/livers/${personInfoList[i].name}.png`).default
     }
   }
 
