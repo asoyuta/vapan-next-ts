@@ -1,8 +1,21 @@
 import Link from 'next/link'
-import { GetStaticProps } from 'next'
-import { Data } from '../../types/index.d'
+import firebase from '../../firebase/clientApp'
+import { useCollection } from 'react-firebase-hooks/firestore'
 
-const Articles = ({ articles }: Data) => {
+const Articles = () => {
+  const db = firebase.firestore()
+
+  const [value, loading, error] = useCollection(db.collection('articles'), {})
+
+  const articles: any[] = []
+  if (!loading && value) {
+    value.docs.map(
+      (doc) => {
+        articles.push(doc.data())
+      }
+    )
+  }
+
   return (
     <div>
       <h1>All Articles</h1>
@@ -17,13 +30,13 @@ const Articles = ({ articles }: Data) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<Data> = async () => {
-  const res = await fetch('http://localhost:8000/articles')
-  const articles = await res.json()
+// export const getStaticProps: GetStaticProps<Data> = async () => {
+//   const res = await fetch('http://localhost:8000/articles')
+//   const articles = await res.json()
 
-  return {
-    props: { articles },
-  }
-}
+//   return {
+//     props: { articles },
+//   }
+// }
 
 export default Articles
