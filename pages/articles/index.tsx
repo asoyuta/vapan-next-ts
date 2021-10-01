@@ -1,4 +1,3 @@
-// import styles from '../../styles/Articles.module.css'
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import { Data } from '../../types/index.d'
