@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Data } from '../../types/index.d'
+import { Data } from '../../types'
 import { GetStaticProps } from 'next'
 
 const Articles = ({articles}: Data) => {
