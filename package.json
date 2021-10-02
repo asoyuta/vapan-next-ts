@@ -2,10 +2,6 @@
   "name": "vapan-next-ts",
   "version": "0.1.0",
   "private": true,
-  "main": "firebaseFunctions.js",
-  "engines": {
-    "node": "16"
-   },
   "scripts": {
     "dev": "next -p 3000",
     "build": "next build",
