@@ -29,7 +29,7 @@ const Details = ({ article }: Props) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch('http://localhost:8000/articles')
+  const res = await fetch('https://us-central1-vapan-next-ts.cloudfunctions.net/app/articles')
   const articles: ArticleData[] = await res.json()
 
   const paths = articles.map((article) => `/articles/${article.id}`)
@@ -41,7 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-  const res = await fetch(`http://localhost:8000/articles/${params!.id}`)
+  const res = await fetch(`https://us-central1-vapan-next-ts.cloudfunctions.net/app/articles/${params!.id}`)
   const article: ArticleData = await res.json()
 
   return {
