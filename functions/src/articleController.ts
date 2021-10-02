@@ -37,7 +37,7 @@ const addArticle = async (req: Request, res: Response) => {
   try {
     const article = db.collection('articles').doc(articleId)
     const articleObject = {
-      id: article.id,
+      id: + article.id,
       title,
       date,
       url,
