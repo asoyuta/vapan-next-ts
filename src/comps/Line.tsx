@@ -1,5 +1,5 @@
 import { SpeechBubble } from './index'
-import { PersonInfo, LineInfo } from '../types/index.d'
+import { PersonInfo, LineInfo } from '../types'
 import Image from 'next/image'
 
 type Props = {

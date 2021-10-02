@@ -1,5 +1,5 @@
 import { Button, Furigana } from './index'
-import { LineInfo } from '../types/index.d'
+import { LineInfo } from '../types'
 import { useState } from 'react'
 
 type Props = {

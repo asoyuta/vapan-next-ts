@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { ArticleData } from '../../types/index.d'
+import { ArticleData } from '../../types'
 import { Dialogue, Title } from '../../comps/index'
 
 type Props = {
@@ -11,7 +11,7 @@ const Details = ({ article }: Props) => {
     const { personInfoList } = article
 
     for (let i = 0; i < personInfoList.length; i++) {
-      personInfoList[i].src = require(`../../public/livers/${personInfoList[i].name}.png`).default
+      personInfoList[i].src = require(`../../../public/livers/${personInfoList[i].name}.png`).default
     }
   }
 
