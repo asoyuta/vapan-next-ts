@@ -1,5 +1,5 @@
 import * as functions from 'firebase-functions'
-import * as express from 'express'
+import express from 'express'
 import { addEntry, deleteEntry, getEntry, getAllEntries, updateEntry } from './entryController'
 import { addArticle, getAllArticles, getArticle, updateArticle, deleteArticle } from './articleController'
 
